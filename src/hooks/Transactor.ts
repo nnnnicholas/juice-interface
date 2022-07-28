@@ -14,6 +14,7 @@ import { emitErrorNotification } from 'utils/notifications'
 import * as Sentry from '@sentry/browser'
 import { t } from '@lingui/macro'
 import { windowOpen } from 'utils/windowUtils'
+import axios from 'axios'
 
 type TransactorCallback = (e?: TransactionEvent, signer?: JsonRpcSigner) => void
 
@@ -23,6 +24,7 @@ type TransactorOptions = {
   onConfirmed?: TransactorCallback
   onCancelled?: TransactorCallback
   onError?: ErrorCallback
+  simulate?: boolean
 }
 
 export type Transactor = (
@@ -44,6 +46,47 @@ const checkWalletConnected = (
 ) => {
   if (!userAddress && onSelectWallet) {
     onSelectWallet()
+  }
+}
+
+const simulateTx = async ({
+  contract,
+  functionName,
+  args,
+  userAddress,
+}: {
+  contract: Contract
+  functionName: string
+  args: any[] // eslint-disable-line @typescript-eslint/no-explicit-any
+  userAddress: string | undefined
+}) => {
+  if (!process.env.NEXT_PUBLIC_TENDERLY_API_KEY) return
+
+  const unsignedTx = await contract.populateTransaction[functionName](...args)
+
+  const body = {
+    network_id: '1',
+    from: userAddress,
+    to: contract.address,
+    input: unsignedTx.data,
+    value: 0,
+    save_if_fails: true,
+  }
+
+  const headers = {
+    headers: {
+      'content-type': 'application/JSON',
+      'X-Access-Key': process.env.NEXT_PUBLIC_TENDERLY_API_KEY,
+    },
+  }
+  const resp = await axios.post(
+    `https://api.tenderly.co/api/v1/account/${process.env.NEXT_PUBLIC_TENDERLY_ACCOUNT}/project/${process.env.NEXT_PUBLIC_TENDERLY_PROJECT_NAME}/simulate`,
+    body,
+    headers,
+  )
+
+  if (resp.data.simulation.status === false) {
+    throw new Error('Transaction is going to fail')
   }
 }
 
@@ -111,6 +154,10 @@ export function useTransactor({
       let etherscanTxUrl = 'https://' + etherscanNetwork + 'etherscan.io/tx/'
       if (network.chainId === 100) {
         etherscanTxUrl = 'https://blockscout.com/poa/xdai/tx/'
+      }
+
+      if (options?.simulate) {
+        await simulateTx({ contract, functionName, args, userAddress })
       }
 
       const tx: Deferrable<TransactionRequest> =
