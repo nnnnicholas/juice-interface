@@ -299,6 +299,9 @@ msgstr ""
 msgid "Add to balance"
 msgstr ""
 
+msgid "Add to balance of {projectTitle}"
+msgstr ""
+
 msgid "Add token"
 msgstr ""
 
@@ -405,6 +408,12 @@ msgid "Any changes you make will take effect in <0>funding cycle #{0}</0>. The c
 msgstr ""
 
 msgid "Any reconfiguration to an upcoming funding cycle will take effect once the current cycle ends. A project with no strategy may be vulnerable to being rug-pulled by its owner."
+msgstr ""
+
+msgid "Approve ${symbol}"
+msgstr ""
+
+msgid "Approve ERC20"
 msgstr ""
 
 msgid "Approve token for transaction"
@@ -569,6 +578,12 @@ msgstr ""
 msgid "Choose how you would like to configure your payouts."
 msgstr ""
 
+msgid "Claim ${tokenSymbol}"
+msgstr ""
+
+msgid "Claim tokens"
+msgstr ""
+
 msgid "Claim {tokenTextPlural}"
 msgstr ""
 
@@ -615,6 +630,9 @@ msgid "Configure the dynamics of your project's token."
 msgstr ""
 
 msgid "Configure which Juicebox V1 project you'd like to accept tokens for. Token holders of this V1 project will be able to swap their V1 tokens for V2 tokens."
+msgstr ""
+
+msgid "Configure {projectTitle}"
 msgstr ""
 
 msgid "Confirm Stake"
@@ -797,6 +815,9 @@ msgstr ""
 msgid "Deploy project"
 msgstr ""
 
+msgid "Deploy project payer for {projectTitle}"
+msgstr ""
+
 msgid "Deploy project to {0}"
 msgstr ""
 
@@ -870,6 +891,15 @@ msgid "Distribute available funds to other Ethereum wallets or Juicebox projects
 msgstr ""
 
 msgid "Distribute funds"
+msgstr ""
+
+msgid "Distribute payouts of {projectTitle}"
+msgstr ""
+
+msgid "Distribute reserved ${tokenSymbol}"
+msgstr ""
+
+msgid "Distribute reserved tokens"
 msgstr ""
 
 msgid "Distribute reserved {tokenTextPlural}"
@@ -983,6 +1013,12 @@ msgstr ""
 msgid "Edit allocation"
 msgstr ""
 
+msgid "Edit details of {projectTitle}"
+msgstr ""
+
+msgid "Edit handle of {projectTitle}"
+msgstr ""
+
 msgid "Edit payout"
 msgstr ""
 
@@ -1062,6 +1098,9 @@ msgid "Extend Lock"
 msgstr ""
 
 msgid "Extend lock successful. Results will be indexed in a few moments."
+msgstr ""
+
+msgid "Extend veNFT lock"
 msgstr ""
 
 msgid "FAQs"
@@ -1268,6 +1307,9 @@ msgstr ""
 msgid "Invalid address"
 msgstr ""
 
+msgid "Issue ${symbol}"
+msgstr ""
+
 msgid "Issue ERC-20"
 msgstr ""
 
@@ -1334,13 +1376,25 @@ msgstr ""
 msgid "Latest payments"
 msgstr ""
 
+msgid "Launch @{handle}"
+msgstr ""
+
 msgid "Launch funding cycle"
+msgstr ""
+
+msgid "Launch funding cycles for {projectTitle}"
 msgstr ""
 
 msgid "Launch veNFT"
 msgstr ""
 
+msgid "Launch veNFT {symbol}"
+msgstr ""
+
 msgid "Launch your project"
+msgstr ""
+
+msgid "Launch {projectTitle}"
 msgstr ""
 
 msgid "Leave blank to start immediately."
@@ -1388,6 +1442,9 @@ msgstr ""
 msgid "Lock {tokensLabel} for Governance NFTs"
 msgstr ""
 
+msgid "Lock veNFT"
+msgstr ""
+
 msgid "Locked {tokenSymbolDisplayText}"
 msgstr ""
 
@@ -1428,6 +1485,15 @@ msgid "Mint NFT to a custom address"
 msgstr ""
 
 msgid "Mint VeNFT"
+msgstr ""
+
+msgid "Migrate {projectTitle}"
+msgstr ""
+
+msgid "Mint ${tokenSymbol}"
+msgstr ""
+
+msgid "Mint NFT to a custom address."
 msgstr ""
 
 msgid "Mint as ERC-20"
@@ -1562,6 +1628,9 @@ msgstr ""
 msgid "No target set."
 msgstr ""
 
+msgid "No transaction history"
+msgstr ""
+
 msgid "Not a valid ETH address"
 msgstr ""
 
@@ -1650,6 +1719,9 @@ msgid "Pay disclosure"
 msgstr ""
 
 msgid "Pay {0}"
+msgstr ""
+
+msgid "Pay {projectTitle}"
 msgstr ""
 
 msgid "Payer"
@@ -1931,10 +2003,19 @@ msgstr ""
 msgid "Reconfigure upcoming funding cycles"
 msgstr ""
 
+msgid "Reconfigure {projectTitle}"
+msgstr ""
+
 msgid "Redeem"
 msgstr ""
 
+msgid "Redeem ${tokenSymbol}"
+msgstr ""
+
 msgid "Redeem successful. Results will be indexed in a few moments."
+msgstr ""
+
+msgid "Redeem tokens"
 msgstr ""
 
 msgid "Redeem veNFT"
@@ -2120,7 +2201,16 @@ msgstr ""
 msgid "Set ENS name"
 msgstr ""
 
+msgid "Set ENS text record for {ensName}"
+msgstr ""
+
+msgid "Set URI for {projectTitle}"
+msgstr ""
+
 msgid "Set Up veNFT Governance"
+msgstr ""
+
+msgid "Set V1 project of {projectTitle}"
 msgstr ""
 
 msgid "Set a distribution limit"
@@ -2144,7 +2234,25 @@ msgstr ""
 msgid "Set a unique name that will be visible in your project's URL, and that will allow your project to appear in search results."
 msgstr ""
 
+msgid "Set handle @{handle}"
+msgstr ""
+
+msgid "Set operator for {projectTitle}"
+msgstr ""
+
+msgid "Set payouts of {projectTitle}"
+msgstr ""
+
 msgid "Set project handle"
+msgstr ""
+
+msgid "Set reserved tokens of {projectTitle}"
+msgstr ""
+
+msgid "Set splits for {projectTitle}"
+msgstr ""
+
+msgid "Set terminals for {projectTitle}"
 msgstr ""
 
 msgid "Set text record for {0}"
@@ -2175,6 +2283,9 @@ msgid "Set up token migration"
 msgstr ""
 
 msgid "Set up your Juicebox V2 project for migration from your Juicebox V1 project."
+msgstr ""
+
+msgid "Set veNFT operator for {projectTitle}"
 msgstr ""
 
 msgid "Should you Juicebox?"
@@ -2237,7 +2348,13 @@ msgstr ""
 msgid "Swap for V2 {tokenText}"
 msgstr ""
 
+msgid "Swap v1 project tokens {projectTitle}"
+msgstr ""
+
 msgid "Switch network to {0}"
+msgstr ""
+
+msgid "Tap {projectTitle}"
 msgstr ""
 
 msgid "Target"
@@ -2582,6 +2699,15 @@ msgstr ""
 msgid "Transfer ownership"
 msgstr ""
 
+msgid "Transfer ownership of {projectTitle}"
+msgstr ""
+
+msgid "Transfer unclaimed ${tokenSymbol}"
+msgstr ""
+
+msgid "Transfer unclaimed tokens"
+msgstr ""
+
 msgid "Transfer unclaimed {tokenSymbolShort}"
 msgstr ""
 
@@ -2628,6 +2754,12 @@ msgid "Unlocking this staking position will burn your NFT and return ${tokenSymb
 msgstr ""
 
 msgid "Unsaved changes"
+msgstr ""
+
+msgid "Unstake ${tokenSymbol}"
+msgstr ""
+
+msgid "Unstake tokens"
 msgstr ""
 
 msgid "Untitled project"
