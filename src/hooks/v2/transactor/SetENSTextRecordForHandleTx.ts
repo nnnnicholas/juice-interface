@@ -5,6 +5,7 @@ import { useContext } from 'react'
 
 import { projectHandleENSTextRecordKey } from 'constants/projectHandleENSTextRecordKey'
 
+import { t } from '@lingui/macro'
 import { TransactorInstance } from '../../Transactor'
 
 export function useSetENSTextRecordForHandleTx(): TransactorInstance<{
@@ -25,7 +26,10 @@ export function useSetENSTextRecordForHandleTx(): TransactorInstance<{
       contracts.PublicResolver,
       'setText',
       [node, projectHandleENSTextRecordKey, projectId.toString()],
-      txOpts,
+      {
+        ...txOpts,
+        title: t`Set ENS text record for ${ensName}`,
+      },
     )
   }
 }

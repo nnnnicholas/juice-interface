@@ -1,4 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber'
+import { t } from '@lingui/macro'
 import { V2ProjectContext } from 'contexts/v2/projectContext'
 import { V2UserContext } from 'contexts/v2/userContext'
 import { useWallet } from 'hooks/Wallet'
@@ -11,7 +12,7 @@ export function useClaimTokensTx(): TransactorInstance<{
 }> {
   const { transactor, contracts } = useContext(V2UserContext)
   const { userAddress } = useWallet()
-  const { projectId } = useContext(V2ProjectContext)
+  const { projectId, tokenSymbol } = useContext(V2ProjectContext)
 
   return ({ claimAmount }, txOpts) => {
     if (!transactor || !userAddress || !projectId || !contracts?.JBTokenStore) {
@@ -23,7 +24,10 @@ export function useClaimTokensTx(): TransactorInstance<{
       contracts?.JBTokenStore,
       'claimFor',
       [userAddress, projectId, claimAmount.toHexString()],
-      txOpts,
+      {
+        ...txOpts,
+        title: tokenSymbol ? t`Claim $${tokenSymbol}` : t`Claim tokens`,
+      },
     )
   }
 }

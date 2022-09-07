@@ -4,13 +4,16 @@ import { useContext } from 'react'
 
 import { JUICEBOX_MONEY_METADATA_DOMAIN } from 'constants/v2/metadataDomain'
 
+import { t } from '@lingui/macro'
 import { TransactorInstance } from '../../Transactor'
+import { useV2ProjectTitle } from '../ProjectTitle'
 
 export function useEditV2ProjectDetailsTx(): TransactorInstance<{
   cid: string
 }> {
   const { transactor, contracts } = useContext(V2UserContext)
   const { projectId } = useContext(V2ProjectContext)
+  const projectTitle = useV2ProjectTitle()
 
   return ({ cid }, txOpts) => {
     if (!transactor || !projectId || !contracts?.JBProjects) {
@@ -22,7 +25,10 @@ export function useEditV2ProjectDetailsTx(): TransactorInstance<{
       contracts.JBProjects,
       'setMetadataOf',
       [projectId, [cid, JUICEBOX_MONEY_METADATA_DOMAIN]],
-      txOpts,
+      {
+        ...txOpts,
+        title: t`Edit details of ${projectTitle}`,
+      },
     )
   }
 }

@@ -64,7 +64,6 @@ export function V2ConfirmPayModal({
     projectMetadata,
     projectId,
     tokenSymbol,
-    handle,
     nftRewards: { rewardTiers },
   } = useContext(V2ProjectContext)
 
@@ -73,9 +72,7 @@ export function V2ConfirmPayModal({
   const [form] = useForm<V2PayFormType>()
 
   const converter = useCurrencyConverter()
-  const payProjectTx = usePayETHPaymentTerminalTx({
-    projectTitle: handle ? `@${handle}` : projectMetadata?.name,
-  })
+  const payProjectTx = usePayETHPaymentTerminalTx()
   const isMobile = useMobile()
 
   const usdAmount = converter.weiToUsd(weiAmount)
