@@ -56,15 +56,6 @@ Take the following steps to set up Piñata for local development:
    - **API Key**. In the `.env` file, copy the **API Key** into the `PINATA_PINNER_KEY` variable.
    - **API Secret**. In the `.env` file, copy the **API Secret** into the `PINATA_PINNER_SECRET` variable.
 
-### Blocknative
-
-Juicebox uses [Blocknative](https://www.blocknative.com) to onboard users by enabling wallet selection, connection, wallet checks, and real-time state updates.
-
-Take the following steps to set up Blocknative for local development:
-
-1. Create a Blocknative API key ([learn more](https://docs.blocknative.com/webhook-api#setup-api-key)).
-1. Copy the API key into the `NEXT_PUBLIC_BLOCKNATIVE_API_KEY` variable of the `.env` file.
-
 ### The Graph
 
 Juicebox uses [The Graph](https://thegraph.com) to query the Ethereum network using a GraphQL API.
