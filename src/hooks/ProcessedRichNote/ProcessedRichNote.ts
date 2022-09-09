@@ -10,7 +10,7 @@ const URLRegex = new RegExp(
 )
 
 // Gets strings that start with 'ipfs'
-const ipfsLinkRegex = new RegExp(
+export const ipfsLinkRegex = new RegExp(
   /((?:ipfs?):\/\/(?:\w+:?\w*)?(?:\S+)(:\d+)?(?:\/|\/([\w#!:.?+=&%!\-/]))?)/gi,
 )
 
